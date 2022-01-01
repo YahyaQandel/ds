@@ -11,11 +11,13 @@ type LinkedList struct {
 }
 
 type LinkedListI interface {
-	addBack()
-	show()
+	AddBack()
+	AddFront()
+	Show()
+	Search()
 }
 
-func (l *LinkedList) addBack(value int) {
+func (l *LinkedList) AddBack(value int) {
 	newNode := Node{value: value}
 	if l.head == nil {
 		l.head = &newNode
@@ -30,7 +32,7 @@ func (l *LinkedList) addBack(value int) {
 	l.size += 1
 }
 
-func (l *LinkedList) show() []int {
+func (l *LinkedList) Show() []int {
 	list := []int{}
 	for l.head != nil {
 		list = append(list, l.head.value)
@@ -39,7 +41,7 @@ func (l *LinkedList) show() []int {
 	return list
 }
 
-func (l *LinkedList) addFront(value int) {
+func (l *LinkedList) AddFront(value int) {
 	newNode := Node{value: value}
 	if l.head == nil {
 		l.head = &newNode
@@ -52,8 +54,8 @@ func (l *LinkedList) addFront(value int) {
 	l.size += 1
 }
 
-func (l *LinkedList) search(value int) bool {
-	list := l.show()
+func (l *LinkedList) Search(value int) bool {
+	list := l.Show()
 	for i := 0; i < len(list); i++ {
 		if list[i] == value {
 			return true

@@ -12,16 +12,16 @@ type test struct {
 
 func TestLinkedListAddBack(t *testing.T) {
 	linkedList := LinkedList{}
-	linkedList.addBack(5)
-	linkedList.addBack(10)
-	linkedList.addBack(20)
+	linkedList.AddBack(5)
+	linkedList.AddBack(10)
+	linkedList.AddBack(20)
 	want := 3
 	got := linkedList.size
 	if got != want {
 		t.Fatalf("expected: %v, got: %v", want, got)
 	}
 	expected := [3]int{5, 10, 20}
-	actual := linkedList.show()
+	actual := linkedList.Show()
 	for i := 0; i < len(actual); i++ {
 		if expected[i] != actual[i] {
 			t.Fatalf("expected: %v, got: %v", expected[i], actual[i])
@@ -31,16 +31,16 @@ func TestLinkedListAddBack(t *testing.T) {
 
 func TestLinkedListAddFront(t *testing.T) {
 	linkedList := LinkedList{}
-	linkedList.addBack(5)
-	linkedList.addFront(200)
-	linkedList.addFront(300)
+	linkedList.AddBack(5)
+	linkedList.AddFront(200)
+	linkedList.AddFront(300)
 	want := 3
 	got := linkedList.size
 	if got != want {
 		t.Fatalf("expected: %v, got: %v", want, got)
 	}
 	expected := [3]int{300, 200, 5}
-	actual := linkedList.show()
+	actual := linkedList.Show()
 	for i := 0; i < len(actual); i++ {
 		if expected[i] != actual[i] {
 			t.Fatalf("expected: %v, got: %v", expected[i], actual[i])
@@ -50,12 +50,12 @@ func TestLinkedListAddFront(t *testing.T) {
 
 func TestLinkedListSearchValue(t *testing.T) {
 	linkedList := LinkedList{}
-	linkedList.addBack(90)
-	linkedList.addFront(119)
-	linkedList.addFront(876)
-	linkedList.addFront(1000)
+	linkedList.AddBack(90)
+	linkedList.AddFront(119)
+	linkedList.AddFront(876)
+	linkedList.AddFront(1000)
 	want := true
-	got := linkedList.search(876)
+	got := linkedList.Search(876)
 	if got != want {
 		t.Fatalf("expected: %v, got: %v", want, got)
 	}
