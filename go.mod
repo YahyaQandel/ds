@@ -1,3 +1,3 @@
-module github.con/YahyaQandel/ds
+module github.com/YahyaQandel/ds
 
 go 1.17
