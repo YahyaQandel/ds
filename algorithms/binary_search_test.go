@@ -23,7 +23,7 @@ func TestBs(t *testing.T) {
 		{input: sampleArray, value: 200, want: -1},
 	}
 	for _, tc := range tests {
-		got := binarySearh(tc.input, tc.value)
+		got := BinarySearh(tc.input, tc.value)
 		if !reflect.DeepEqual(tc.want, got) {
 			t.Fatalf("expected: %v, got: %v", tc.want, got)
 		}
