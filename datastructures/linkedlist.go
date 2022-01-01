@@ -10,7 +10,7 @@ type LinkedList struct {
 	head *Node
 }
 
-type LinkedListI interface {
+type ILinkedList interface {
 	AddBack()
 	AddFront()
 	Show()

@@ -4,12 +4,6 @@ import (
 	"testing"
 )
 
-type test struct {
-	input []int
-	value int
-	want  int
-}
-
 func TestLinkedListAddBack(t *testing.T) {
 	linkedList := LinkedList{}
 	linkedList.AddBack(5)
