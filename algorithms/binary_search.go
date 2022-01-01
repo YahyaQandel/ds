@@ -1,4 +1,4 @@
-package main
+package algorithms
 
 func binarySearh(arr []int, value int) int {
 	l, r := 0, len(arr)-1
@@ -13,8 +13,4 @@ func binarySearh(arr []int, value int) int {
 		}
 	}
 	return -1
-}
-
-func main() {
-
 }
