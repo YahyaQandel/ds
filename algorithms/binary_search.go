@@ -1,6 +1,6 @@
 package algorithms
 
-func binarySearh(arr []int, value int) int {
+func BinarySearh(arr []int, value int) int {
 	l, r := 0, len(arr)-1
 	for l <= r {
 		mid := (l + r) / 2
