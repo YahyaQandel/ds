@@ -1,20 +1,28 @@
 package algorithms
 
-func BFS(adjMatrix map[int][]int) []int {
-	list := make([]int, 0)
-	vistited := []int{}
+import (
+	datastructres "github.com/YahyaQandel/ds/datastructures"
+)
 
-	for node, neighbors := range adjMatrix {
-		for _, neighbor := range neighbors {
-			if notIn(neighbor, vistited) && notIn(neighbor, list) {
-				list = append(list, neighbor)
-			}
-			list = append(list, neighbor)
-
+func BFS(adjMatrix map[int][]int, target int) bool {
+	queue := datastructres.Queue{}
+	queue.Enqueue(1)
+	listToWalkTo := []int{}
+	visited := []int{}
+	for queue.Size() > 0 {
+		currentNode := queue.Dequeue()
+		if currentNode == target {
+			return true
 		}
-		vistited = append(vistited, node)
+		if notIn(currentNode, visited) {
+			for i := 0; i < len(adjMatrix[currentNode]); i++ {
+				queue.Enqueue(adjMatrix[currentNode][i])
+			}
+			listToWalkTo = append(listToWalkTo, currentNode)
+			visited = append(visited, currentNode)
+		}
 	}
-	return list
+	return false
 }
 
 func notIn(value int, list []int) bool {

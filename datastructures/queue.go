@@ -4,6 +4,9 @@ type Queue struct {
 	list []int
 }
 
+func (q *Queue) Size() int {
+	return len(q.list)
+}
 func (q *Queue) Enqueue(item int) {
 	q.list = append(q.list, item)
 }
