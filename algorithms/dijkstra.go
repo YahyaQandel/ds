@@ -15,7 +15,6 @@ func Dijkstra(graph map[string]map[string]int, start string, target string) (int
 	*/
 	processedNodes := make([]string, 0)
 	costs, parents := getGraphNodesCostsAndParents(graph, start)
-	// parents := make(map[string]string)
 	for {
 
 		nearestNode := getNearestNodeNotProcessed(costs, processedNodes)
